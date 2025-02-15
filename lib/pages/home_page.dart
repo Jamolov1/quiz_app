@@ -75,14 +75,12 @@ class _HomePageState extends State<HomePage> {
                     image: "assets/java.png",
                     name: "Java",
                     onTapp: () {
-
                         Navigator.push(context, MaterialPageRoute(builder: (_) {
                           return QuizPage(
                             name: "Java",
                             quizs: tests1,
                           );
                         }));
-
                     },
                   ),
                   ItemCategoryQuiz(
@@ -95,14 +93,12 @@ class _HomePageState extends State<HomePage> {
                             quizs: tests2,
                           );
                         }));
-
                     },
                   ),
                   ItemCategoryQuiz(
                     image: "assets/c++.png",
                     name: "C++",
                     onTapp: () {
-
                         Navigator.push(context, MaterialPageRoute(builder: (_) {
                           return QuizPage(
                             name: "C++",
