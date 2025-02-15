@@ -27,25 +27,30 @@ class _IntroPageState extends State<IntroPage> {
             },
             children: [
               itemIntro(
+                image: "assets/intro.png",
                 title: "Select a Contest",
                 subTitle:
                     "Unlock any event you find exciting and pay entry fee to enter the contest",
               ),
               itemIntro(
+                image: "assets/intro1.png",
                 title: "Play Quiz",
                 subTitle:
                     "Once you enter, pick a topic and Play Quiz and increase your knowledge",
               ),
               itemIntro(
+                image: "assets/intro3.png",
                 title: "Score",
                 subTitle:
                     "Your score will be presented to you at the end of the Quiz",
               ),
               itemIntro(
+                image: "assets/intro2.png",
                 title: "Leaderboard",
                 subTitle: "Fastest to answer all Quiz questions Correctly Wins",
               ),
               itemIntro(
+                image: "assets/intro4.png",
                 title: "Cash-Out",
                 subTitle:
                     "You Won! Time to Cash-out. You can cash out from My Wallet",
@@ -78,7 +83,7 @@ class _IntroPageState extends State<IntroPage> {
     );
   }
 
-  Widget itemIntro({image, title, subTitle}) {
+  Widget itemIntro({image, title, subTitle,}) {
     return Container(
       padding: const EdgeInsets.all(30),
       height: double.infinity,
@@ -103,6 +108,10 @@ class _IntroPageState extends State<IntroPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Container(
+             height: MediaQuery.of(context).size.height*0.25,
+              child: Image.asset(image),
+            ),
             Text(
               title,
               style: const TextStyle(

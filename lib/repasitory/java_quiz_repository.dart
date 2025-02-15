@@ -56,7 +56,7 @@ class JavaQuizRepository {
       quiz: "Java dasturida try-catch blokidan nima maqsadda foydalaniladi?",
       a: "A.Shartni tekshirish uchun",
       b: "B.Funksiyani chaqirish uchun",
-      c: "C.Xatoliklarni ushlash va qayta ishlash uchun",
+      c: "C.Xatoliklarni ushlash va qayta ishlash",
       d: "D.Sinfni yaratish uchun",
       trueAnswer: "C",
     ));
@@ -85,7 +85,6 @@ class JavaQuizRepository {
       trueAnswer: "A",
     ));
 
-    quizs.shuffle();
     return quizs;
   }
 }

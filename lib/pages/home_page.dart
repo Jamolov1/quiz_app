@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_app/model/test_model.dart';
+import 'package:quiz_app/pages/quiz_page.dart';
 import 'package:quiz_app/repasitory/c++_quiz_repository.dart';
 import 'package:quiz_app/repasitory/java_quiz_repository.dart';
 import 'package:quiz_app/repasitory/python_quiz_repository.dart';
@@ -16,6 +17,7 @@ class _HomePageState extends State<HomePage> {
   List<TestModel> tests1 = JavaQuizRepository.setJava();
   List<TestModel> tests2 = PythonQuizRepository.setPyhon();
   List<TestModel> tests3 = CplusplusQuizRepository.setCplusplus();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -70,15 +72,44 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   ItemCategoryQuiz(
                     image: "assets/java.png",
-                    name: "Java", onTap: tests1.length.toString,
+                    name: "Java",
+                    onTapp: () {
+
+                        Navigator.push(context, MaterialPageRoute(builder: (_) {
+                          return QuizPage(
+                            name: "Java",
+                            quizs: tests1,
+                          );
+                        }));
+
+                    },
                   ),
                   ItemCategoryQuiz(
                     image: "assets/python.png",
-                    name: "Python", onTap: tests2.length.toString,
+                    name: "Python",
+                    onTapp: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (_) {
+                          return QuizPage(
+                            name: "Python",
+                            quizs: tests2,
+                          );
+                        }));
+
+                    },
                   ),
                   ItemCategoryQuiz(
                     image: "assets/c++.png",
-                    name: "C++", onTap: tests3.length.toString,
+                    name: "C++",
+                    onTapp: () {
+
+                        Navigator.push(context, MaterialPageRoute(builder: (_) {
+                          return QuizPage(
+                            name: "C++",
+                            quizs: tests3,
+                          );
+                        }));
+
+                    },
                   ),
                 ],
               ))

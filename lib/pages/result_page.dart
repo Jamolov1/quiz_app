@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:quiz_app/model/test_model.dart';
+import 'package:quiz_app/pages/home_page.dart';
 
 class ResultPage extends StatefulWidget {
   List<String> truefalseAnswers;
@@ -38,6 +39,19 @@ class _ResultPageState extends State<ResultPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.deepPurple.shade800,
+        leading: IconButton(
+            onPressed: () {
+              Navigator.pushReplacement(context, MaterialPageRoute(builder: (_){
+                return HomePage();
+              }));
+            },
+            icon: Icon(
+              Icons.arrow_back,
+              color: Colors.white,
+            )),
+      ),
       body: Container(
         decoration: BoxDecoration(
             gradient: LinearGradient(
@@ -77,13 +91,15 @@ class _ResultPageState extends State<ResultPage> {
                 return Container(
                   margin: EdgeInsets.all(20),
                   decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(15)),
+                      color: Colors.deepPurple,
+                      borderRadius: BorderRadius.circular(15),
+                      border:
+                          Border.all(width: 2, color: Colors.grey.shade600)),
                   child: ListTile(
                     title: Text(
                       "${index + 1}. ${widget.savollar[index].quiz}",
                       style: TextStyle(
-                          color: Colors.black,
+                          color: Colors.white,
                           fontSize: 18,
                           fontWeight: FontWeight.bold),
                     ),

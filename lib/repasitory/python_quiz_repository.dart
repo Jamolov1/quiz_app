@@ -85,7 +85,6 @@ class PythonQuizRepository {
       trueAnswer: "B",
     ));
 
-    quizs.shuffle();
     return quizs;
   }
 }

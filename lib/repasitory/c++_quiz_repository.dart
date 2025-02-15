@@ -85,7 +85,7 @@ class CplusplusQuizRepository {
       trueAnswer: "C",
     ));
 
-    quizs.shuffle();
+
     return quizs;
 
   }

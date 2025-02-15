@@ -1,24 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:quiz_app/pages/quiz_page.dart';
 
-import '../model/test_model.dart';
-import '../repasitory/java_quiz_repository.dart';
 class ItemCategoryQuiz extends StatelessWidget {
   String image;
   String name;
-  VoidCallback onTap;
+  VoidCallback onTapp;
 
-  ItemCategoryQuiz({super.key,required this.image,required this.name,required this.onTap});
+  ItemCategoryQuiz({super.key,required this.image,required this.name,required this.onTapp});
   @override
   Widget build(BuildContext context) {
-    List<TestModel> tests = JavaQuizRepository.setJava();
     return InkWell(
-      onTap: (){
-        Navigator.push(context, MaterialPageRoute(builder: (_){
-          tests.shuffle();
-          return QuizPage(name: name, quizs: tests,);
-        }));
-      },
+      onTap: onTapp,
       child: Container(
         margin: const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
         padding: const EdgeInsets.all(12),

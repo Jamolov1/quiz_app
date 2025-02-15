@@ -52,7 +52,7 @@ class _LoginPageState extends State<LoginPage> {
             children: [
               Container(
                 margin: EdgeInsets.only(top: 100),
-                height: 220,
+                height: 200,
                 child: Image.asset(
                   "assets/crown.png",
                   fit: BoxFit.cover,
